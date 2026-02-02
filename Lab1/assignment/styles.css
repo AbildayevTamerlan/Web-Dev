@@ -1,0 +1,23 @@
+body {
+    background-color: lightblue;
+    font-family: monospace;
+}
+h1 {
+    font-size: 1.5em;
+    color: white;
+}
+a:hover {
+    background-color: mediumpurple;
+}
+ol, ul {
+    padding: 10px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+.odd-row {
+    background-color: white;
+}
+#lists {
+    margin-left: 20px;
+}

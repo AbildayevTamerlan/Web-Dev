@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+main {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gradient {
+    background: -webkit-linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#left-section {
+    margin: 0;
+    padding: 0;
+    width: 60%;
+    height: 100%;
+    border-right: 3px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#logo-instagram {
+    width: 100px;
+    margin: 20px 0 0 20px;
+    padding: 0;
+    align-self: flex-start;
+}
+h1 {
+    width: 600px;
+    text-align: center;
+    line-height: 1.5em;
+}
+#right-section {
+    margin: 0;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user-input {
+    width: 90%;
+    height: 50px;
+    margin: 5px 40px 10px 40px;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    border-radius: 8px;
+    text-overflow: ellipsis;
+}
+.button {
+    width: 90%;
+    height: 40px;
+    margin: 5px 40px 5px 40px;
+    border: 1px solid #dbdbdb;
+    border-radius: 15px;
+}
+.button:hover {
+    background-color: #f2f2f2;
+    border-color: #dbdbdb;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+#login-button {
+    background-color: #0064e0;
+    color: white;
+    border: none;
+}
+.button:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+#new-password-button {
+    border: none;
+    background-color: white;
+}
+#facebook-button {
+    background-color: white;
+}
+#facebook-button:hover, #new-password-button:hover, #new-account-button:hover {
+    background-color: #f2f2f2;
+}
+#new-account-button {
+    background-color: white;
+    color: #0064e0;
+    border: 1px solid #0064e0;
+}
+form {
+    width: 90%;
+}
+p {
+    margin: 0 0 20px 40px;
+}
