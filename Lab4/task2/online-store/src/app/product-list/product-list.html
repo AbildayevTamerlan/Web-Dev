@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Магазин товаров с Kaspi.kz</h1>
+
+  <div class="product-list">
+    @for (product of products; track product.id) {
+      <div class="product-card">
+
+        <div class="main-image-container">
+          <img [src]="product.image" [alt]="product.name" class="main-image">
+        </div>
+
+        <div class="thumbnails">
+          @for (imgUrl of product.images; track imgUrl) {
+            <img
+              [src]="imgUrl"
+              (click)="changeImage(product, imgUrl)"
+              [class.active]="product.image === imgUrl"
+              class="thumb"
+            >
+          }
+        </div>
+
+        <h3>
+          <a [href]="product.link" target="_blank">{{ product.name }}</a>
+        </h3>
+
+        <p class="description">{{ product.description }}</p>
+
+        <div class="rating">Рейтинг: <span class="badge">{{ product.rating }}</span></div>
+
+        <div class="price"> {{ product.price }} ₸</div>
+
+        <div class="share-buttons">
+          <button (click)="shareToWhatsapp(product.link)" class="btn-whatsapp">
+            Whatsapp
+          </button>
+
+          <button (click)="shareToTelegram(product.link)" class="btn-telegram">
+            Telegram
+          </button>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>
