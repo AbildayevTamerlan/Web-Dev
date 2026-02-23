@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="main-title">Магазин товаров с Kaspi.kz</h1>
+
+  <nav class="category-nav">
+    <button
+      (click)="selectCategory(null)"
+      [class.active]="selectedCategoryId === null"
+      class="category-btn">
+      Все товары
+    </button>
+
+    @for (cat of allCategories; track cat.id) {
+      <button
+        (click)="selectCategory(cat.id)"
+        [class.active]="selectedCategoryId === cat.id"
+        class="category-btn">
+        {{ cat.name }}
+      </button>
+    }
+  </nav>
+
+  @if (selectedCategoryId !== null || allProducts.length > 0) {
+    <app-product-list
+      [products]="filteredProducts"
+      (remove)="handleRemove($event)">
+    </app-product-list>
+  } @else {
+    <div class="welcome-msg">Пожалуйста, выберите категорию, чтобы увидеть товары.</div>
+  }
+</div>

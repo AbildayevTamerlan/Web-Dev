@@ -1,0 +1,36 @@
+<div class="product-card">
+  <div class="main-image-container">
+    <img [src]="product.image" [alt]="product.name" class="main-image">
+  </div>
+
+  <div class="thumbnails">
+    @for (imgUrl of product.images; track imgUrl) {
+      <img
+        [src]="imgUrl"
+        (click)="changeImage(imgUrl)"
+        [class.active]="product.image === imgUrl"
+        class="thumb"
+      >
+    }
+  </div>
+
+  <h3>
+    <a [href]="product.link" target="_blank">{{ product.name }}</a>
+  </h3>
+
+  <p class="description">{{ product.description }}</p>
+
+  <div class="rating">Рейтинг: <span class="badge">{{ product.rating }}</span></div>
+
+  <div class="likes-section">
+    <button (click)="like()" class="btn-like">❤️ {{ product.likes }}</button>
+    <button (click)="remove.emit(product.id)" class="btn-remove">🗑️ Удалить</button>
+  </div>
+
+  <div class="price">{{ product.price }} ₸</div>
+
+  <div class="share-buttons">
+    <button (click)="shareToWhatsapp()" class="btn-whatsapp">WA</button>
+    <button (click)="shareToTelegram()" class="btn-telegram">TG</button>
+  </div>
+</div>
