@@ -1,0 +1,27 @@
+.album-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.album-item a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+.album-item button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+}
+
+.album-item button:hover {
+  background-color: #cc0000;
+}

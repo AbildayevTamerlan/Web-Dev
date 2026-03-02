@@ -1,0 +1,13 @@
+<h2>Album Photos</h2>
+<button (click)="goBack()">Back</button>
+
+<div class="photo-grid">
+  @for (photo of photos; track photo.id) {
+    <div class="photo-card">
+      <img [src]="photo.thumbnailUrl" [alt]="photo.title" />
+      <p>{{ photo.title }}</p>
+    </div>
+  } @empty {
+    <p>No photos found for this album.</p>
+  }
+</div>
