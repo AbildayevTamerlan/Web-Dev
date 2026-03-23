@@ -1,8 +1,16 @@
 <div class="container">
   <h1>Магазин товаров с Kaspi.kz</h1>
 
+  <div class="search-box">
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Поиск товаров по названию..."
+    >
+  </div>
+
   <div class="product-list">
-    @for (product of products; track product.id) {
+    @for (product of filteredProducts; track product.id) {
       <div class="product-card">
 
         <div class="main-image-container">

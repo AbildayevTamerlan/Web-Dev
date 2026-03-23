@@ -27,6 +27,10 @@
     <button (click)="remove.emit(product.id)" class="btn-remove">🗑️ Удалить</button>
   </div>
 
+  <button class="btn-favorite" (click)="onToggleFavorite()">
+    {{ product.isFavorite ? '⭐ In Favorites' : '⭐ Add to Favorites' }}
+  </button>
+
   <div class="price">{{ product.price }} ₸</div>
 
   <div class="share-buttons">

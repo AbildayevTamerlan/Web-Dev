@@ -4,6 +4,7 @@ import {AboutComponent} from './components/about/about.component';
 import {AlbumsComponent} from './components/albums/albums.component';
 import {AlbumDetailComponent} from './components/album-detail/album-detail.component';
 import {AlbumPhotosComponent} from './components/album-photos/album-photos.component';
+import {AlbumCreateComponent} from './components/album-create/album-create.component';
 
 export const routes: Routes = [
   {
@@ -36,4 +37,9 @@ export const routes: Routes = [
     component: AlbumPhotosComponent,
     title: 'AlbumPhotos',
   },
+  {
+    path: 'albums/new',
+    component: AlbumCreateComponent,
+    title: 'AlbumCreate',
+  }
 ];

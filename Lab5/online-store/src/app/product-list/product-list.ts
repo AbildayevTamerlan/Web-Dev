@@ -13,4 +13,6 @@ import { ProductItem } from './product-item/product-item';
 export class ProductList {
   @Input() products: Product[] = [];
   @Output() remove = new EventEmitter<number>();
+
+  @Output() toggleFav = new EventEmitter<number>();
 }

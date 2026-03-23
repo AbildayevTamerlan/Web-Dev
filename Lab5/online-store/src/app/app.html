@@ -19,10 +19,31 @@
     }
   </nav>
 
+  <section class="favorites-section">
+    <h2 class="section-title">⭐ Избранное ({{ favorites.length }})</h2>
+
+    @if (favorites.length === 0) {
+      <div class="welcome-msg">Избранныз товаров еще нет</div>
+    } @else {
+      <div class="product-grid">
+        @for (fav of favorites; track fav.id) {
+          <app-product-item
+            [product]="fav"
+            (remove)="handleRemove($event)"
+            (toggleFav)="toggleFavorite($event)">
+          </app-product-item>
+        }
+      </div>
+    }
+  </section>
+
+  <hr class="separator">
+
   @if (selectedCategoryId !== null || allProducts.length > 0) {
     <app-product-list
       [products]="filteredProducts"
-      (remove)="handleRemove($event)">
+      (remove)="handleRemove($event)"
+      (toggleFav)="toggleFavorite($event)">
     </app-product-list>
   } @else {
     <div class="welcome-msg">Пожалуйста, выберите категорию, чтобы увидеть товары.</div>

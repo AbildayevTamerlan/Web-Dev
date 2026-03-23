@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AlbumService } from '../../services/album.service';
 import { Album } from '../../models/album.model';
@@ -6,7 +7,7 @@ import { Album } from '../../models/album.model';
 @Component({
   selector: 'app-albums',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './albums.component.html'
 })
 export class AlbumsComponent implements OnInit {
@@ -16,10 +17,18 @@ export class AlbumsComponent implements OnInit {
   constructor(private albumService: AlbumService) {}
 
   ngOnInit(): void {
-    this.albumService.getAlbums().subscribe((data) => {
+
+    this.albumService.albums$.subscribe((data) => {
       this.albums = data;
-      this.isLoading = false;
+      console.log('Albums updated:', data);
+
+
+      if (data.length > 0) {
+        this.isLoading = false;
+      }
     });
+
+    this.albumService.getAlbums().subscribe();
   }
 
   deleteAlbum(id: number): void {

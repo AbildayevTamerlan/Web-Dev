@@ -13,6 +13,12 @@ export class ProductItem {
   @Input() product!: Product;
   @Output() remove = new EventEmitter<number>();
 
+  @Output() toggleFav = new EventEmitter<number>();
+
+  onToggleFavorite() {
+    this.toggleFav.emit(this.product.id);
+  }
+
   changeImage(newImage: string) {
     this.product.image = newImage;
   }

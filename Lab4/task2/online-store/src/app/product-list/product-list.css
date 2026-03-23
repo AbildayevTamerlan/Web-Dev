@@ -86,3 +86,23 @@ button:hover {
   object-fit: contain;
   background-color: #f9f9f9;
 }
+.search-box {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+  border-color: #0088cc;
+}

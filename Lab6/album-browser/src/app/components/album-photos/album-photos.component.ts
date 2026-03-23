@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import {Location, NgOptimizedImage} from '@angular/common';
 import { AlbumService } from '../../services/album.service';
 import { Photo } from '../../models/photo.model';
 
 @Component({
   selector: 'app-album-photos',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './album-photos.component.html',
   styleUrl: './album-photos.component.css'
 })

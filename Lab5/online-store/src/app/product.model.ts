@@ -10,4 +10,6 @@ export interface Product {
 
   likes: number;
   categoryId: number;
+
+  isFavorite: boolean;
 }

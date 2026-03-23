@@ -34,6 +34,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 1,
+
+    isFavorite: false,
   },
   {
     id: 2,
@@ -47,6 +49,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 1,
+
+    isFavorite: false,
   },
   {
     id: 3,
@@ -60,6 +64,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 1,
+
+    isFavorite: false,
   },
   {
     id: 4,
@@ -73,6 +79,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 1,
+
+    isFavorite: false,
   },
   {
     id: 5,
@@ -86,6 +94,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 1,
+
+    isFavorite: false,
   },
 
   // Ноутбуки
@@ -101,6 +111,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 2,
+
+    isFavorite: false,
   },
   {
     id: 7,
@@ -114,6 +126,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 2,
+
+    isFavorite: false,
   },
   {
     id: 8,
@@ -127,6 +141,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 2,
+
+    isFavorite: false,
   },
   {
     id: 9,
@@ -140,6 +156,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 2,
+
+    isFavorite: false,
   },
   {
     id: 10,
@@ -153,6 +171,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 2,
+
+    isFavorite: false,
   },
 
   // Планшеты
@@ -168,6 +188,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 3,
+
+    isFavorite: false,
   },
   {
     id: 12,
@@ -181,6 +203,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 3,
+
+    isFavorite: false,
   },
   {
     id: 13,
@@ -194,6 +218,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 3,
+
+    isFavorite: false,
   },
   {
     id: 14,
@@ -207,6 +233,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 3,
+
+    isFavorite: false,
   },
   {
     id: 15,
@@ -220,6 +248,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 3,
+
+    isFavorite: false,
   },
 
   // Наушники
@@ -235,6 +265,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 4,
+
+    isFavorite: false,
   },
   {
     id: 17,
@@ -248,6 +280,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 4,
+
+    isFavorite: false,
   },
   {
     id: 18,
@@ -261,6 +295,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 4,
+
+    isFavorite: false,
   },
   {
     id: 19,
@@ -274,6 +310,8 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 4,
+
+    isFavorite: false,
   },
   {
     id: 20,
@@ -287,5 +325,7 @@ export const products: Product[] = [
 
     likes: 0,
     categoryId: 4,
+
+    isFavorite: false,
   },
 ]
