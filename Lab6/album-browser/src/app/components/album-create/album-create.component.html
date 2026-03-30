@@ -1,0 +1,18 @@
+<div class="create-container">
+  <h2>Create New Album</h2>
+
+  <div class="form-group">
+    <label for="userId">User ID:</label>
+    <input id="userId" type="number" [(ngModel)]="newAlbum.userId" />
+  </div>
+
+  <div class="form-group">
+    <label for="title">Album Title:</label>
+    <input id="title" [(ngModel)]="newAlbum.title" placeholder="Enter title..." />
+  </div>
+
+  <div class="actions">
+    <button (click)="create()" [disabled]="!newAlbum.title">Create</button>
+    <button (click)="router.navigate(['/albums'])">Cancel</button>
+  </div>
+</div>
