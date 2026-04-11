@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -19,21 +19,29 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ['name']
+    ordering_fields = ['name', 'price']
+    ordering = ['name']
+
     def get_queryset(self):
         queryset = Product.objects.all()
 
         category_id = self.request.query_params.get("category")
-        active = self.request.query_params.get("active")
-        search = self.request.query_params.get("search")
+        is_active_param = self.request.query_params.get("is_active")
 
         if category_id:
             queryset = queryset.filter(category_id=category_id)
 
-        if active is not None:
-            is_active = active.lower() == "true"
-            queryset = queryset.filter(is_active=is_active)
-
-        if search:
-            queryset = queryset.filter(name__icontains=search)
+        if is_active_param is not None:
+            val = is_active_param.lower() == "true"
+            queryset = queryset.filter(is_active=val)
 
         return queryset
+
+    @action(detail=False, methods=['get'])
+    def active(self, request):
+        active_products = Product.objects.filter(is_active=True)
+        filtered_queryset = self.filter_queryset(active_products)
+        serializer = self.get_serializer(filtered_queryset, many=True)
+        return Response(serializer.data)
