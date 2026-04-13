@@ -28,3 +28,21 @@ class ProductDetailAPIView(RetrieveModelMixin, UpdateModelMixin, DestroyModelMix
 
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
+
+class ActiveProductListAPIView(ListModelMixin, GenericAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return Product.objects.filter(is_active=True)
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+class ExpensiveProductListAPIView(ListModelMixin, GenericAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return Product.objects.filter(price__gt=100000)
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)

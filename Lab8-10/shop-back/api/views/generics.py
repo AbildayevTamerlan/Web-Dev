@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -27,3 +27,15 @@ class CategoryProductsAPIView(APIView):
         products = Product.objects.filter(category_id=category_id)
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
+
+class ActiveProductListAPIView(ListAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return Product.objects.filter(is_active=True)
+
+class ExpensiveProductListAPIView(ListAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return Product.objects.filter(price__gt=100000)
